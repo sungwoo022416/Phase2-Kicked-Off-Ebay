@@ -1,4 +1,4 @@
 class Bid < ApplicationRecord
-    belongs_to: products
-    belongs_to: users
+    belongs_to :product
+    belongs_to :user
 end
