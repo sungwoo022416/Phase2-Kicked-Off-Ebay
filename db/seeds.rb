@@ -91,6 +91,19 @@ i = 0
         product_id: i,
         category_id: 4
     })
+    
+    Product.create({
+        name: Faker::Coffee.blend_name,
+        category: 'coffee',
+        price: "#{rand(1..1000)}",
+        user_id: rand(1..4)
+    })
+
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 5
+    })
 
     Product.create({
         name: Faker::Drone.name,
@@ -102,9 +115,9 @@ i = 0
     i += 1
     ProductCategory.create({
         product_id: i,
-        category_id: 5
+        category_id: 6
     })
-
+    
     Product.create({
         name: Faker::Camera.brand_with_model,
         category: 'electronic',
@@ -116,18 +129,5 @@ i = 0
     ProductCategory.create({
         product_id: i,
         category_id: 6
-    })
-    
-    Product.create({
-        name: Faker::Coffee.blend_name,
-        category: 'coffee',
-        price: "#{rand(1..1000)}",
-        user_id: rand(1..4)
-    })
-    
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 7
     })
 end
