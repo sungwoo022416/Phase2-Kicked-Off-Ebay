@@ -1,9 +1,31 @@
-<h1>New user</h1>
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400" > 
+  
+  <h1 class= "font-bold text-6xl text-center text-blue-400 align-top "> Create New User</h1>
 
-<%= render "form", user: @user %>
+  <div class = ""><p>
+    <%= form_for @user do |f| %>
+      <div>
+        <%= f.label :name, style: "display: block" %>
+        <%= f.text_field :name %>
+      </div>
 
-<br>
+      <div>
+        <%= f.label :interest_1, style: "display: block" %>
+        <%= f.text_field :interest_1 %>
+      </div>
 
-<div>
-  <%= link_to "Back to users", users_path %>
-</div>
+      <div>
+        <%= f.label :interest_2, style: "display: block" %>
+        <%= f.text_field :interest_2 %>
+      </div>
+
+      <div>
+        <%= f.submit %>
+      </div>
+    <%end%></p>
+  </div>
+
+  <div>
+      <%= link_to "Back to users", users_path %>
+  </div>
+</body>
