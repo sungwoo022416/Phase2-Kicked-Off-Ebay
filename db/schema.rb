@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_04_144350) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_04_144811) do
   create_table "bids", force: :cascade do |t|
     t.string "price"
     t.integer "product_id"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,14 +44,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_144350) do
     t.string "name"
     t.string "category"
     t.string "price"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "interest_1"
-    t.string "interest_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
