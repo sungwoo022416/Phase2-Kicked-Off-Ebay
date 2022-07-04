@@ -5,18 +5,52 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+categories = [{
+  name: "book"
+},
+{
+  name: "game",
+},
+{
+  name: "figure"
+},
+{
+  name: "movie"
+},
+{
+  name: "coffee"
+},
+{
+  name: "electronic"
+}
+]
+
+categories.each do |c|
+  Category.create!(c)
+end
+
 4.times do 
     User.create({
       name: "#{Faker::Name.initials(number: 2)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}"
     })
 end
 
+i = 0
+
 5.times do 
+
     Product.create({
       name: Faker::Book.title,
       category: "book",
       price: "#{rand(1..1000)}",
       user_id: rand(1..4)
+    })
+
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 1
     })
 
     Product.create({
@@ -26,11 +60,23 @@ end
       user_id: rand(1..4)
     })
 
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 2
+    })
+
     Product.create({
         name: Faker::JapaneseMedia::OnePiece.character,
         category: 'figure',
         price: "#{rand(1..1000000)}",
         user_id: rand(1..4)
+    })
+
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 3
     })
 
     Product.create({
@@ -40,6 +86,12 @@ end
         user_id: rand(1..4)
     })
 
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 4
+    })
+
     Product.create({
         name: Faker::Drone.name,
         category: 'electronic',
@@ -47,21 +99,35 @@ end
         user_id: rand(1..4)
     })
 
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 5
+    })
+
     Product.create({
         name: Faker::Camera.brand_with_model,
         category: 'electronic',
-        price: "#{rand(500..100000)}",
+        price: "#{rand(1..100000)}",
         user_id: rand(1..4)
     })
-
+    
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 6
+    })
+    
     Product.create({
         name: Faker::Coffee.blend_name,
         category: 'coffee',
-        price: "#{rand(5..1000)}",
+        price: "#{rand(1..1000)}",
         user_id: rand(1..4)
     })
+    
+    i += 1
+    ProductCategory.create({
+        product_id: i,
+        category_id: 7
+    })
 end
-
-
-
-  
