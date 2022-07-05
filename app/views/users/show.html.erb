@@ -1,6 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center">
+  <div>
+    <h1 class = "text-center text-5xl font-bold text-blue-400"><%=@user.name%></h1>
+  </div>
 
-<%= render @user %>
+  <div>
+    <h2 class = "text-center text-3xl text-blue-500 underline">Products for $ale</h2>
+    <ul><%@user.products.each do |product| %>
+      <li><%=link_to product.name, product%></li>
+      <%end%>
+    </ul>
+  </div>
+
+</body>
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |

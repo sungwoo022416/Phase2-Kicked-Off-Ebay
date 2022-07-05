@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center">
+  
+  <div>
+    <p style="color: green"><%= notice %></p>
+  </div>
 
-<h1>Users</h1>
+  <div class = "font-bold text-clip text-5xl text-blue-400">
+    <h1 >Users</h1>
+  </div>
 
-<div id="users">
+
+
+<div>
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "#{user.name.titilize}'s. Page", user %>
-    </p>
+    <%= link_to "#{user.name} | #{user.products.count} items for sale", user %>
   <% end %>
 </div>
 
 <%= link_to "New user", new_user_path %>
+
+</body>
