@@ -1,14 +1,27 @@
 <p style="color: green"><%= notice %></p>
+<body class="h-full bg-gradient-to-b from-blue-400 to-white overscroll-none">
+  <div>
+    <h1 class = "text-center text-5xl font-bold text-rose-400">Products</h1>
+  </div>
 
-<h1>Products</h1>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
-</div>
+  <div  class = "text-left text-2xl text-gray-800" id="products">
+    <ul> <% @products.each do |product| %>
+      <li><%= link_to "#{product.name}", product%></li>
+        <ul>
+          <li>Seller: <%=link_to product.user.name, product.user%></li>
+          <li>Categories:</li>
+            <ul><%product.categories.each do |c|%>
+              <li><%=link_to c.name.titleize, c%></li>
+            </ul>
+            <%end%>
+          <li>Price: $<%= product.price%> </li>
+        </ul>
+    </ul>
+    <% end %>
+  </div>
 
-<%= link_to "New product", new_product_path %>
+  <div class = "text-right text-top outline-double 	outline-width: 4px hover:rounded-full bg-rose-400">
+  <%= link_to "Sell your stuff!", new_product_path %>
+  </div>
+</body>

@@ -1,7 +1,37 @@
 <h1>Editing user</h1>
 
-<%= render "form", user: @user %>
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
+  <div>
+    <h1 class= "font-bold text-6xl text-center text-blue-400"> Editing Your Profile</h1>
+
+    <div>
+      <%= form_for @user do |f| %>
+        <div class = "">
+          <%= f.label :name, style: "display: block" %>
+          <%= f.text_field :name %>
+        </div>
+
+        <div>
+          <%#= f.label :interest_1, style: "display: block" %>
+          <%#= f.collection_select(:user, :category_id, Categories.all, :id, :name) %>
+        </div>
+
+        <div>
+          <%#= f.label :interest_2, style: "display: block" %>
+          <%#= f.text_field :interest_2 %>
+        </div>
+
+        <div class = "rounded-full bg-yellow-200">
+          <%= f.submit "Create User"%>
+        </div>
+      <%end%></p>
+    </div>
+    <div class = "rounded-full bg-rose-400">
+      <%= link_to "Back to users", users_path %>
+    </div>
+   </div>
+</body>
 <br>
 
 <div>
