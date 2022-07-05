@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
+<body class="h-screen bg-gradient-to-b from-blue-400 to-white overscroll-none">
+  <div>
+    <%= link_to "Edit this product", edit_product_path(@product) %> |
+    <%= link_to "Back to products", products_path %>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
-</div>
+    <%= button_to "Destroy this product", @product, method: :delete %>
+  </div>
+</body>
