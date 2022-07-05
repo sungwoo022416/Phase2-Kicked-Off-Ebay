@@ -1,10 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<body class="h-screen bg-gradient-to-b from-blue-400 to-white overscroll-none">
-  <div>
-    <%= link_to "Edit this product", edit_product_path(@product) %> |
-    <%= link_to "Back to products", products_path %>
-
-    <%= button_to "Destroy this product", @product, method: :delete %>
+  <div class = "absolute inset-y-5 right-0 ">
+   <h1 class = "text-4xl text-bold text-green-900">💵PRICE💵 ➡️ $<%=@product.price%></h1>
   </div>
+
+  <div class = "absolute left-0 top-0 h-10 w-10">
+    <h1><%= link_to "🔙", products_path %></h1>
+  </div>
+
+<body class="h-screen bg-gradient-to-b from-blue-400 to-white overscroll-none object-center">
+  <div class = "text-center">
+    <div class = "text-left ">
+      <h1 class = "text-6xl text-bold underline"><%=@product.name%></h1>
+     
+      <h2>Seller ➡️ <%=link_to User.find(@product.user_id).name,  User.find(@product.user_id)%></h2>
+      <h2>Categories ➡️ <%@product.categories.each do |c|%>
+            <%=link_to c.name.titleize, c%>
+            <%end%>
+    </div>
+  </div>
+
 </body>
