@@ -1,30 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<div class = "absolute top-3 right-3 p-3 text-right text-top outline-double 	outline-width: 24px hover:bg-red-600 bg-rose-400 " >
-  <%= link_to "Sell your stuff!", new_product_path %>
-</div>
-
-<body class="h-full bg-gradient-to-b from-blue-400 to-white overscroll-none">
-  <div>
-    <div>
-      <h1 class = "text-left text-5xl font-bold text-rose-400">Products</h1>
-    </div>
-
-    <div class = "text-left text-2xl text-gray-800">
-      <ul> <% @products.each do |product|%>
-        <li>✨Product: <%=link_to "#{product.name}", product%></li>
-          <ul class = "list-none">
-            <li>😇Seller: <%=link_to product.user.name, product.user%></li>
-            <li>🎁Categories:</li>
-              <ul ><%product.categories.each do |c|%>
-                <li><%=link_to c.name.titleize, c%></li>
-              </ul>
-              <%end%>
-            <li>💰Price: $<%= product.price%> </li>
-          </ul>
-      </ul>
-      <% end %>
+<body class =  "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
+  <div class = "grid grid-cols-6 gap-4 row-auto mx-auto">
+    <div class = "col-start-2 col-span-4 text-center">
+      <h1 class = "text-6xl text-blue-400">KickedOffEbay</h1>
+      <h2 class = "text-3xl text-blue-300">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h2>
+      <svg class="animate-bounce w-24 h-24" width="50" height="50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"/></svg>
     </div>
   </div>
-
 </body>
