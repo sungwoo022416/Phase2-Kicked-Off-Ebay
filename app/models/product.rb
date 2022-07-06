@@ -43,4 +43,17 @@ class Product < ApplicationRecord
             return 0.00
         end
     end
+
+    def self.ordered_by_price
+        Product.all.sort_by(&:price).reverse
+    end
+
+    def under_value 
+        difference = (self.price.to_f - self.max_bid_price.to_f)
+        if difference > 0 
+            return "🟢 $#{difference} BELOW MSRP"
+        elsif difference < 0 
+            return "❤️‍🔥 HOT ITEM"
+        end
+    end
 end
