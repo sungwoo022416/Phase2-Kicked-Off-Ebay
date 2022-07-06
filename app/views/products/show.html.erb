@@ -21,7 +21,7 @@
         <h1 class = "text-6xl text-green-600">CURRENT BID</h1>
         <h1 class = "text-6xl">$<%=@product.max_bid%></h1>
           <div>
-          <form id = "bidform">
+          <form method = "post" action = "/bids/create" id = "bidform">
             <label class = "text-4xl text-green-600" for="price">🤑PLACE BID HERE🤑</label><br><br>
             <input type = "number" id = "price"><br><br>
             <input class = "bg-green-600 rounded-fill" type = "submit" value = "PLACE BID">
