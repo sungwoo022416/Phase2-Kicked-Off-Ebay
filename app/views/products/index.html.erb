@@ -1,11 +1,11 @@
-<body class =  "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
+<body class =  "h-full bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
 
   <div class = "grid grid-cols-6 gap-4 row-auto mx-auto">
 
     <div class = "col-start-1 col-span-1 text-center mx-auto">
-      <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br>
+      <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br><br><br><br><br>
 
-      <h2 class = "text-right text-4xl text-blue-400 underline">CATEGORIES</h2>
+      <h2 class = "text-right text-4xl text-blue-400 underline w-max">CATEGORIES</h2>
       <ul class = "list-none"> <%Category.all.each do |c|%>
         <br><li class = "text-3xl">➡️ <%=link_to c.name.titleize, c%> ⬅️</li>
         <%end%>
@@ -13,16 +13,21 @@
     </div>
 
     <div class = "col-start-2 col-span-4 text-center content-center">
-      <h1 class = "text-8xl text-blue-400">KickedOffEbay</h1>
-      <h1 class = "text-3xl text-blue-300">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
+      <h1 class = "text-8xl text-green-500">KickedOffEbay</h1>
+      <h1 class = "text-6xl text-blue-600 w-max text-left mx-auto">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
+      <h2 class = "text-4xl text-blue-400 underline">PRODUCTS</h2>
+      <ul class = "list-none text-center"><%Product.ordered_by_price.each do |p|%>
+        <li class = "text-2xl col-start-3 col-span-1">🔥 <%=link_to p.name, p%> | <%=p.under_value%></li>
+        <%end%>
+      <ul>
       
     </div>
 
      <div class = "col-start-6 col-span-1 text-center mx-auto">
-      <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br>
+      <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br><br><br><br><br>
 
-      <h2 class = "text-right text-4xl text-blue-400 underline">TRENDING</h2>
-      <ul class = "list-none"> <%Bid.trending_products.each do |c|%>
+      <h2 class = "text-center text-4xl text-blue-400 underline w-max">🚨TRENDING</h2>
+      <ul class = "list-none text-center"> <%Bid.trending_products.each do |c|%>
         <br><li class = "text-3xl">🚀 <%=link_to c.product.name.titleize, c.product%></li>
         <%end%>
       </ul>
