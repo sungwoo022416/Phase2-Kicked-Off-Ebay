@@ -30,11 +30,26 @@ categories.each do |c|
   Category.create!(c)
 end
 
+j = 0
+
 4.times do 
+
     User.create({
       name: "#{Faker::Name.initials(number: 2)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}"
     })
+    j += 1
+    Interest.create({
+      user_id: j,
+      category_id: rand(1..3)
+    })
+
+    Interest.create({
+      user_id: j,
+      category_id: rand(4..6)
+    })
 end
+
+
 
 i = 0
 
