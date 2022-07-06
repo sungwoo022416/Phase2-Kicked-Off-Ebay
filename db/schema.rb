@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_144811) do
   end
 
   create_table "interests", force: :cascade do |t|
-    t.string "interst"
     t.integer "user_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
