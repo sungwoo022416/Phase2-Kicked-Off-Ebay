@@ -1,7 +1,14 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
+<body class =  "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
+  <div>
+    <h1 class = "text-6xl text-blue-400"><%=category.name.titleize%></h1>
+    <ul class = "list-none text-4xl"><%category.products.each do |p|%>
+      <li>🔥 <%=link_to p.name, p%></li>
+        <ul class = "list-none">
+          <li>💰Current Bid <%=p.max_bid_price%></li>
+        </ul><br>
+      <%end%>
+    </ul>
 
-</div>
+    </div>
+  </div>
+</body>
