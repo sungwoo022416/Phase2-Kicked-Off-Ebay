@@ -19,7 +19,8 @@
 
       <div class = "border-double border-orange-600 border-8 bg-orange-300">
         <h1 class = "text-6xl text-green-600">CURRENT BID</h1>
-        <h1 class = "text-6xl">$<%=@product.max_bid%></h1>
+        <h1 class = "text-6xl">$<%=@product.max_bid_price%></h1>
+        <h1 class = "text-6xl">By: <%= link_to @product.max_bidder_name, @product.max_bidder %></h1>
           <div>
             <%=form_for @bid do |f|%>
             <label class = "text-4xl text-green-600" for="price">🤑PLACE BID HERE🤑</label><br><br>

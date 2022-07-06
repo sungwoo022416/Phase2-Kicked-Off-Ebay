@@ -1,11 +1,12 @@
-<p style="color: green"><%= notice %></p>
 <body  class = "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center">
+  <p style="color: green"><%= notice %></p>
   <div>
     <h1 class = "text-5xl underline">Bid</h1>
     <%= render @bid %>
 
     <div>
-      <%= link_to "Back to bids", bids_path %>
+      <%= link_to "Back to bids", bids_path %> | 
+      <%= link_to "Back to #{@bid.product.name}", @bid.product%>
     </div>
   </div>
 </body>
