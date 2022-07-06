@@ -1,28 +1,50 @@
-<p style="color: green"><%= notice %></p>
+<body class = "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
+  <div class = "flex mx-auto">
 
-<div class = "absolute top-0 right-0 h-10 p-3 text-center">
-  <h1>💵PRICE💵 ➡️ $<%=@product.price%></h1>
-  <form class = "text-2xl" id = "bidform">
-    <label for="price">PLACE BID HERE</label><br>
-    <input type = "number" id = "price"><br>
-  </form>
-  <button class = "rounded-fill" type = "submit" value = "PLACE BID" id = "bidform">
-</div>
-
-<div class = "absolute left-0 top-0 h-10 w-40 p-3">
-  <h1><%= link_to "🔙 to All Products", products_path %></h1>
-</div>
-
-<body class="h-screen bg-gradient-to-b from-blue-400 to-white overscroll-none object-center">
-  <div class = "text-center">
-    <div class = "text-left ">
-      <h1 class = "text-6xl text-bold underline"><%=@product.name%></h1>
-     
-      <h2>Seller ➡️ <%=link_to User.find(@product.user_id).name,  User.find(@product.user_id)%></h2>
-      <h2>Categories ➡️ <%@product.categories.each do |c|%>
-            <%=link_to c.name.titleize, c%>
-            <%end%>
+    <div class = "flex-none w-60">
+      <div></div>
+      <div class = "border-dashed border-8 border-green-600">
+        <h2 class = "text-3xl text-center text-green-600">💸MSRP💸</h2>
+        <h2 class = "text-3xl text-center">$<%=@product.price%></h2>
+      </div>
     </div>
-  </div>
 
+    <div class = "flex-none w-20">
+    </div>
+
+    <div class = "grow text-center">
+      <div>
+        <h1 class = "text-6xl"><%=@product.name%></h1>
+      </div> 
+
+      <div class = "border-double border-orange-600 border-8 bg-orange-300">
+        <h1 class = "text-6xl text-green-600">CURRENT BID</h1>
+        <h1 class = "text-6xl">$<%@product.max_bid%></h1>
+          <br><div>
+          <form id = "bidform">
+            <label class = "text-4xl text-fuchsia-600" for="price">PLACE BID HERE</label><br><br>
+            <input type = "number" id = "price"><br><br>
+            <input class = "bg-green-600 "type = "submit" value = "PLACE BID">
+          </form>
+          <br>
+        </div>
+      </div>
+
+     
+
+    </div>
+
+    <div class = "flex-none w-20">
+     
+    </div>
+
+    <div class = "flex-none w-60">
+      <div></div>
+      <div class = "border-dashed border-8 border-green-600">
+        <h2 class = "text-3xl text-center text-green-600">💸MSRP💸</h2>
+        <h2 class = "text-3xl text-center">$<%=@product.price%></h2>
+      </div>
+    </div>
+
+  </div>
 </body>
