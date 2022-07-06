@@ -1,21 +1,26 @@
-<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center">
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
   <div>
-    <h1 class = "text-center text-5xl font-bold text-blue-400"><%=@user.name%></h1>
-  </div>
+    <div>
+      <h1 class = "text-center text-6xl font-bold text-blue-400"><%=@user.name%></h1>
+    </div>
 
-  <div>
-    <h2 class = "text-center text-3xl text-blue-500 underline">Products for $ale</h2>
-    <ul><%@user.products.each do |product| %>
-      <li><%=link_to product.name, product%></li>
-      <%end%>
-    </ul>
+    <div>
+      <h2 class = "text-left text-3xl text-blue-500 underline">Products for $ale</h2>
+      <ul class = "list-none text-2xl"><%Product.all.filter { |p| p.user_id == @user.id }.each do |prod| %> <%#User.products not working %> 
+        <li>🤑 <%=link_to prod.name, prod%></li>
+        <%end%>
+      </ul>
+    </div>
+
+    <div>
+      <%= link_to "Edit this user", edit_user_path(@user) %> |
+      <%= link_to "Back to users", users_path %>
+
+      <%= button_to "Delete your profile", @user, method: :delete %>
+    </div>
+
   </div>
 
 </body>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
 
-  <%= button_to "Delete your profile", @user, method: :delete %>
-</div>

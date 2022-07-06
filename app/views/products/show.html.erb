@@ -1,12 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-  <div class = "absolute inset-y-5 right-0 ">
-   <h1 class = "text-4xl text-bold text-green-900">💵PRICE💵 ➡️ $<%=@product.price%></h1>
-  </div>
+<div class = "absolute top-0 right-0 h-10 p-3 text-center">
+  <h1>💵PRICE💵 ➡️ $<%=@product.price%></h1>
+  <form class = "text-2xl" id = "bidform">
+    <label for="price">PLACE BID HERE</label><br>
+    <input type = "number" id = "price"><br>
+  </form>
+  <button class = "rounded-fill" type = "submit" value = "PLACE BID" id = "bidform">
+</div>
 
-  <div class = "absolute left-0 top-0 h-10 w-10">
-    <h1><%= link_to "🔙", products_path %></h1>
-  </div>
+<div class = "absolute left-0 top-0 h-10 w-40 p-3">
+  <h1><%= link_to "🔙 to All Products", products_path %></h1>
+</div>
 
 <body class="h-screen bg-gradient-to-b from-blue-400 to-white overscroll-none object-center">
   <div class = "text-center">
