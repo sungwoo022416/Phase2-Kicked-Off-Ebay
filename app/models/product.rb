@@ -8,7 +8,7 @@ class Product < ApplicationRecord
         if self.bids == []
             return 0.00
         else 
-            self.bids.max { |b1, b2| b1.price <=> b2.price }
+            self.bids.max { |b1, b2| b1.price <=> b2.price }.price
         end
     end
 end
