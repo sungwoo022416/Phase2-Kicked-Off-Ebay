@@ -19,12 +19,12 @@
 
       <div class = "border-double border-orange-600 border-8 bg-orange-300">
         <h1 class = "text-6xl text-green-600">CURRENT BID</h1>
-        <h1 class = "text-6xl">$<%@product.max_bid%></h1>
-          <br><div>
+        <h1 class = "text-6xl">$<%=@product.max_bid%></h1>
+          <div>
           <form id = "bidform">
-            <label class = "text-4xl text-fuchsia-600" for="price">PLACE BID HERE</label><br><br>
+            <label class = "text-4xl text-green-600" for="price">🤑PLACE BID HERE🤑</label><br><br>
             <input type = "number" id = "price"><br><br>
-            <input class = "bg-green-600 "type = "submit" value = "PLACE BID">
+            <input class = "bg-green-600 rounded-fill" type = "submit" value = "PLACE BID">
           </form>
           <br>
         </div>

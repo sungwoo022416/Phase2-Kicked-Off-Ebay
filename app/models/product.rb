@@ -5,6 +5,11 @@ class Product < ApplicationRecord
     belongs_to :user
 
     def max_bid
-        self.bids.max { |b1, b2| b1.price <=>b2.price }
+        if self.bids == []
+            return 0.00
+        else 
+            self.bids.max { |b1, b2| b1.price <=>b2.price }
+        end
+       
     end
 end
