@@ -6,12 +6,17 @@
 
   <p>
     <strong>Product:</strong>
-    <%= bid.product_id %>
+    <%= bid.product.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= bid.user_id %>
+    <%= bid.user.name %>
+  </p>
+
+  <p>
+    <strong>Placed:</strong>
+    <%= bid.created_at%>
   </p>
 
 </div>

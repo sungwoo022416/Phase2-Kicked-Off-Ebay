@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
+<body  class = "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center">
+  <div>
+    <h1 class = "text-5xl underline">Bid</h1>
+    <%= render @bid %>
 
-<%= render @bid %>
-
-<div>
-  <%= link_to "Edit this bid", edit_bid_path(@bid) %> |
-  <%= link_to "Back to bids", bids_path %>
-
-  <%= button_to "Destroy this bid", @bid, method: :delete %>
-</div>
+    <div>
+      <%= link_to "Back to bids", bids_path %>
+    </div>
+  </div>
+</body>
