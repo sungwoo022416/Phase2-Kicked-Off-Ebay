@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_07_04_144811) do
   create_table "bids", force: :cascade do |t|
-    t.string "price"
+    t.float "price"
     t.integer "product_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
