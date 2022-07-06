@@ -1,10 +1,24 @@
 <body class =  "h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
+
   <div class = "grid grid-cols-6 gap-4 row-auto mx-auto">
-    <div class = "col-start-2 col-span-4 text-center">
+
+    <div class = "col-start-1 col-span-1 text-left">
+      <br><br><br>
+      <h2 class = "text-4xl">CATEGORIES</h2>
+      <ul class = "list-none"> <%Category.all.each do |c|%>
+        <br><li>➡️<%=link_to c.name.titleize, c%></li>
+        <%end%>
+      </ul>
+    </div>
+
+    <div class = "col-start-2 col-span-4 text-center content-center">
       <h1 class = "text-6xl text-blue-400">KickedOffEbay</h1>
       <h2 class = "text-3xl text-blue-300">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h2>
-      <svg class="animate-bounce w-24 h-24 mx-auto" width="50" height="50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"/></svg>
-      <button type="button" class="mx-auto focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
+      <svg class="self-center animate-bounce w-24 h-24 mx-auto text-center" width="50" height="50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"/></svg>
+      <button type="button" class="self-center text-centermx-auto focus:outline-none text-white bg-rose-400 hover:bg-fuchsia-600 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-rose-500 dark:hover:bg-fuchsia-600 dark:focus:ring-fuchsia-900">SIGN IN OR SIGN UP</button>
     </div>
+
+
   </div>
+
 </body>
