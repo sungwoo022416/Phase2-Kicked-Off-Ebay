@@ -40,11 +40,12 @@
     </div>
 
     <div>
-      <%= link_to "Edit this user", edit_user_path(@user) %> |
       <%= link_to "Back to users", users_path %>
-      <%= link_to "Sell Your Stuff!", '/products/new'%>
-
-      <%= button_to "Delete your profile", @user, method: :delete %>
+      <% if @user.id == current_user.id%>
+        <%= link_to "Edit this user", edit_user_path(@user) %> |
+        <%= link_to "Sell Your Stuff!", '/products/new'%>
+        <%= button_to "Delete your profile", @user, method: :delete %>
+      <% end %>
     </div>
 
   </div>
