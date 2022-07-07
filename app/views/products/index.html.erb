@@ -8,18 +8,17 @@
         <ul class = "list-none text-center mx-auto">
           <h1 class = "text-4xl no-underline text-green-400"><%= link_to "KɪᴄᴋᴇᴅOғғEʙᴀʏ🏠", '/'%></h1>
           <h2 class = "mx-auto text-2xl">Because ➡️➡️➡️➡️ Everyone🫵 Deserves💪 a Second♻️ Chance😇</h2>
-          <form class = "mx-auto text-2xl">
-          <label>🅢🅔🅐🅡🅒🅗🔎​​​​​​​<input class = "text-center text-2xl text-bold bg-green-400 hover:bg-fuchsia-600" type = "text" value = ""></input></label>
-          </form>
+            <a href="/login">  
+            <button class= "text-2xl rounded-full  bg-green-400 hover:bg-green-600">Login</button></a>
+            <a href="/users/new">  
+            <button class = "text-2xl rounded-full bg-green-400 hover:bg-green-600">Sign Up</button></a>
+            <br>
+            <h3 class = "mx-auto text-2xl">🔎🅢🅔🅐🅡🅒🅗🔎</h3>
+            <%= form_tag(products_path, method: :get) do %>
+            <%= text_field_tag(:search, params[:search])%>
+            <%end%>
         </ul>
       </div>
-    </header>
-
-    <header class = "bg-blue-400 font-bold p-2 col-start-7 col-span-6 mx-auto">
-      <a href="/login">  
-       <button>Login</button></a>
-      <a href="/users/new">  
-      <button>Sign Up</button></a> 
     </header>
 
     <div class = "col-start-1 col-span- text-center mx-auto">
@@ -36,7 +35,7 @@
       <h1 class = "text-8xl text-green-500">𝕂𝕚𝕔𝕜𝕖𝕕𝕆𝕗𝕗_𝔼𝕓𝕒𝕪</h1>
       <h1 class = "text-6xl text-blue-600 w-max text-left mx-auto">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
       <h2 class = "text-4xl text-blue-400 underline">PRODUCTS</h2>
-      <ul class = "list-none text-center"><%Product.ordered_by_price.each do |p|%>
+      <ul class = "list-none text-center"><%@products.each do |p|%>
         <li class = "text-2xl col-start-3 col-span-1">🔥 <%=link_to p.name, p%> | <%=p.under_value%></li>
         <%end%>
       <ul>
