@@ -69,6 +69,12 @@ i = 0
         category_id: 1
     })
 
+    Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
+    })
+
     Product.create({
       name: Faker::Game.title,
       category: "game",
@@ -80,6 +86,12 @@ i = 0
     ProductCategory.create({
         product_id: i,
         category_id: 2
+    })
+
+    Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
     })
 
     Product.create({
@@ -95,6 +107,12 @@ i = 0
         category_id: 3
     })
 
+    Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
+    })
+
     Product.create({
         name: Faker::Movie.title,
         category: 'movie',
@@ -107,12 +125,24 @@ i = 0
         product_id: i,
         category_id: 4
     })
+
+    Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
+    })
     
     Product.create({
         name: Faker::Coffee.blend_name,
         category: 'coffee',
         price: "#{rand(1..1000)}",
         user_id: rand(1..4)
+    })
+
+   Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
     })
 
     i += 1
@@ -133,6 +163,12 @@ i = 0
         product_id: i,
         category_id: 6
     })
+
+    Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
+    })
     
     Product.create({
         name: Faker::Camera.brand_with_model,
@@ -145,5 +181,11 @@ i = 0
     ProductCategory.create({
         product_id: i,
         category_id: 6
+    })
+
+    Bid.create({
+      price: "#{rand(1.0..999.9).round(2)}",
+      product_id: i,
+      user_id: rand(1..4)
     })
 end

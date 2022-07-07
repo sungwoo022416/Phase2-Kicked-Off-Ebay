@@ -1,22 +1,28 @@
 <body class =  "h-full bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
 
   
+  <div class = "grid grid-cols- gap-6 row-auto mx-auto">
 
-  <div class = "grid grid-cols-6 gap-4 row-auto mx-auto">
-
-    <header class = "bg-blue-400 font-bold p-3 col-start-1 col-span-6 mx-auto">
+    <header class = "bg-blue-400 font-bold p-3 col-start-3 col-span-6 mx-auto">
       <div class= "p-2">
         <ul class = "list-none text-center mx-auto">
-          <h1 class = "text-4xl no-underline text-green-400"><%= link_to "KickedOffEbay 🏠", '/'%></h1>
+          <h1 class = "text-4xl no-underline text-green-400"><%= link_to "KɪᴄᴋᴇᴅOғғEʙᴀʏ🏠", '/'%></h1>
           <h2 class = "mx-auto text-2xl">Because ➡️➡️➡️➡️ Everyone🫵 Deserves💪 a Second♻️ Chance😇</h2>
           <form class = "mx-auto text-2xl">
-            <input class = "text-center text-2xl text-bold bg-green-400 hover:bg-fuchsia-600" type = "text" value = "$earch" ></input>
+          <label>🅢🅔🅐🅡🅒🅗🔎​​​​​​​<input class = "text-center text-2xl text-bold bg-green-400 hover:bg-fuchsia-600" type = "text" value = ""></input></label>
           </form>
         </ul>
       </div>
     </header>
 
-    <div class = "col-start-1 col-span-1 text-center mx-auto">
+    <header class = "bg-blue-400 font-bold p-2 col-start-7 col-span-6 mx-auto">
+      <a href="/login">  
+       <button>Login</button></a>
+      <a href="/users/new">  
+      <button>Sign Up</button></a> 
+    </header>
+
+    <div class = "col-start-1 col-span- text-center mx-auto">
       <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br><br><br><br><br>
 
       <h2 class = "text-right text-4xl text-blue-400 underline w-max">CATEGORIES</h2>
@@ -27,7 +33,7 @@
     </div>
 
     <div class = "col-start-2 col-span-4 text-center content-center">
-      <h1 class = "text-8xl text-green-500">KickedOffEbay</h1>
+      <h1 class = "text-8xl text-green-500">𝕂𝕚𝕔𝕜𝕖𝕕𝕆𝕗𝕗_𝔼𝕓𝕒𝕪</h1>
       <h1 class = "text-6xl text-blue-600 w-max text-left mx-auto">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
       <h2 class = "text-4xl text-blue-400 underline">PRODUCTS</h2>
       <ul class = "list-none text-center"><%Product.ordered_by_price.each do |p|%>
