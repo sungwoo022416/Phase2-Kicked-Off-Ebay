@@ -7,22 +7,22 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 categories = [{
-  name: "book"
+  name: "Book"
 },
 {
-  name: "game",
+  name: "Games",
 },
 {
-  name: "figure"
+  name: "Figures"
 },
 {
-  name: "movie"
+  name: "Movies"
 },
 {
-  name: "coffee"
+  name: "Coffee"
 },
 {
-  name: "electronic"
+  name: "Electronics"
 }
 ]
 
@@ -58,7 +58,7 @@ i = 0
 
     Product.create({
       name: Faker::Book.title,
-      category: "book",
+      category: "Books",
       price: "#{rand(1..1000)}",
       user_id: rand(1..4)
     })
@@ -77,7 +77,7 @@ i = 0
 
     Product.create({
       name: Faker::Game.title,
-      category: "game",
+      category: "Games",
       price: "#{rand(1..100)}",
       user_id: rand(1..4)
     })
@@ -96,7 +96,7 @@ i = 0
 
     Product.create({
         name: Faker::JapaneseMedia::OnePiece.character,
-        category: 'figure',
+        category: 'Figurines',
         price: "#{rand(1..1000000)}",
         user_id: rand(1..4)
     })
@@ -115,7 +115,7 @@ i = 0
 
     Product.create({
         name: Faker::Movie.title,
-        category: 'movie',
+        category: 'Movies',
         price: "#{rand(1..50)}",
         user_id: rand(1..4)
     })
@@ -134,7 +134,7 @@ i = 0
     
     Product.create({
         name: Faker::Coffee.blend_name,
-        category: 'coffee',
+        category: 'Coffee',
         price: "#{rand(1..1000)}",
         user_id: rand(1..4)
     })
@@ -153,7 +153,7 @@ i = 0
 
     Product.create({
         name: Faker::Drone.name,
-        category: 'electronic',
+        category: 'Electronics',
         price: "#{rand(300..10000000000000)}",
         user_id: rand(1..4)
     })
@@ -172,7 +172,7 @@ i = 0
     
     Product.create({
         name: Faker::Camera.brand_with_model,
-        category: 'electronic',
+        category: 'Electronics',
         price: "#{rand(1..100000)}",
         user_id: rand(1..4)
     })

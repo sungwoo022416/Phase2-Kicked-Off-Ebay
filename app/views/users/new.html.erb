@@ -1,34 +1,32 @@
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
-  <div>
+  <div class = "mx-auto">
     <h1 class= "font-bold text-6xl text-center text-blue-400"> Create New User</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.each do |error| %>
-        <li><%= error.full_messages %></li>
+            <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_messages %></li>
+
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
-    <%= f.label :Username %>
+    <%= f.label :Username %><br>
     <%= f.text_field :name %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :Password %>
+    <%= f.label :Password %><br>
     <%= f.password_field :password %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :Conformation%>
+    <%= f.label :Confirmation%><br>
     <%= f.password_field :password_confirmaition %>
-  </div>
+  </div><br>
   <h3> Please Select Your Interest </h3>
   <div>
     <%= f.label :interest, style: "display: block" %>
@@ -43,13 +41,11 @@
   <div>
     <%= f.label :interest, style: "display: block" %>
     <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
-  </div>
+  </div><br>
 
-  <div class = "rounded-full bg-yellow-200">
-    <%= f.submit "Create User"%>
-  </div>
-      <%end%>
-  <div class = "rounded-full bg-rose-400">
+  <div>
+    <%= f.submit "Create User"%><br>
+    <%end%>
     <%= link_to "Back to users", users_path %>
   </div>
 </body>
