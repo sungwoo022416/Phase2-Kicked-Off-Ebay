@@ -1,0 +1,15 @@
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
+
+  <div>
+    <% if logged_in? %>
+        <h1>You are Logged In, <%= current_user.name %></h1>
+    <%end%>
+    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+    <%= button_to "Homepage", '/', method: :get%>
+    <%= button_to "Seller List", users_path,  method: :get%>
+    <%= button_to "Bids List", bids_path,  method: :get%>
+    <%= button_to "Category List", categories_path,  method: :get%>
+    <% end %>
+    </div>
+</body>

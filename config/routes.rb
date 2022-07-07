@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get '/login' => 'sessions#new'
-  get '/login' => 'sessions#create'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   get '/logout' => 'sessions#destroy'
+  get '/home' => 'welcome#home'
+
   # Defines the root path route ("/")
   root "products#index"
 end
