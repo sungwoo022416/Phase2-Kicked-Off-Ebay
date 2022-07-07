@@ -35,7 +35,8 @@ j = 0
 4.times do 
 
     User.create({
-      name: "#{Faker::Name.initials(number: 2)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}"
+      name: "#{Faker::Name.initials(number: 2)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}",
+      password_digest: "#{User.name}"
     })
     j += 1
     Interest.create({
