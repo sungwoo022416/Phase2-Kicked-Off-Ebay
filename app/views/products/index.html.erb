@@ -21,6 +21,21 @@
       </div>
     </header>
 
+    <header class = "bg-blue-400 font-bold p-2 col-start-7 col-span-6 mx-auto">
+      <% if logged_in? %>
+      hELLLO! <%=current_user.name %><br>
+        <a href="/home">  
+        <button>My profile</button></a>
+        <a href="/logout">  
+        <button>Logout</button></a> 
+      <% else %>
+        <a href="/login">  
+        <button>Login</button></a>
+        <a href="/users/new">  
+        <button>Sign Up</button></a> 
+      <% end %>
+    </header>
+
     <div class = "col-start-1 col-span- text-center mx-auto">
       <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br><br><br><br><br>
 

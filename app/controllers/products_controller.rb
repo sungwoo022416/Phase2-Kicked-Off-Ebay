@@ -8,9 +8,8 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
-    @product = Product.find(params[:id])
-    @bid = Bid.new
-
+      @product = Product.find(params[:id])
+      @bid = Bid.new
   end
 
   # GET /products/new
@@ -31,7 +30,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to product_path, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
