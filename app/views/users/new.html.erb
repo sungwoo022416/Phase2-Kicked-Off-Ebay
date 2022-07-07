@@ -1,18 +1,16 @@
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
   <div class = "mx-auto">
-    <h1 class= "font-bold text-6xl text-center text-blue-400">Create New User</h1>
+    <h1 class= "font-bold text-6xl text-center text-blue-400"> Create New User</h1>
       <%= form_for @user do |f| %>
         <% if @user.errors.any? %>
-          <div id="error_explanation">
+          <div style="color: red">
             <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
             <ul>
-            <% user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_messages %></li>
+
       <% end %>
 
   <div class="field">
