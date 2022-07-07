@@ -56,4 +56,12 @@ class Product < ApplicationRecord
             return "❤️‍🔥 HOT ITEM"
         end
     end
+
+    def self.search(search)
+        if search 
+            Product.where('category LIKE :search OR name LIKE :search', search: search) 
+        else 
+            Product.all
+        end
+    end
 end
