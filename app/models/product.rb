@@ -58,7 +58,9 @@ class Product < ApplicationRecord
     end
 
     def self.search(search)
-        if search 
+        if search == "" or search == " "
+            Product.all
+        elsif search 
             Product.where('category LIKE :search OR name LIKE :search', search: search) 
         else 
             Product.all
