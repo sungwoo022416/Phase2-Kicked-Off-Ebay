@@ -1,15 +1,21 @@
-<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center w-fit"> 
 
-  <div>
-    <h1 class= "font-bold text-6xl text-center text-blue-400"> Log In</h1>
-    <%= form_tag '/login' do %>
-    Username: <%= text_field_tag :name%><br>
-    Password: <%= password_field_tag :password %>
-    
-    <div class = "rounded-full bg-yellow-200">
-        <%= submit_tag "Log In"%>
+  <div class = "mx-auto">
+
+    <h1 class= "font-bold text-6xl text-center text-blue-400">Log In</h1>
+    <div>
+      <%= form_tag '/login' do %>
+      <%= text_field_tag :name%><br><br>
+      <%= password_field_tag :password %><br><br>
+      <%= submit_tag "Log In"%>
+      <% end %>
+    </div><br>
+
+    <div  class = "bg-green-400 rounded-full text-2xl">
+      <button class = "rounded-full">
+        <%= link_to(controller: 'users', action: 'new') { "Don't have account? Get Back to Buying and Selling HERE" } %>
+      </button>
     </div>
-    <% end %>
 
-    <h3><%= link_to(controller: 'users', action: 'new') { "don't have account?" } %></h3>
+  </div>
 </body>
