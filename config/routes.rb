@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   get '/logout' => 'sessions#destroy'
   get '/home' => 'welcome#home'
-
   # Defines the root path route ("/")
   root "products#index"
 end

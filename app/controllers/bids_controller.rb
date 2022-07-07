@@ -1,5 +1,6 @@
 class BidsController < ApplicationController
-  before_action :set_bid, only: %i[ show edit update destroy ]
+  before_action :require_logged_in, :set_bid, only: %i[ show edit update destroy ]
+
 
   # GET /bids or /bids.json
   def index
@@ -22,10 +23,10 @@ class BidsController < ApplicationController
 
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to bid_url(@bid), notice: "Bid was successfully created." }
+        format.html { redirect_to product_path(@bid.product), notice: "Bid was successfully created." }
         format.json { render :show, status: :created, location: @bid }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to product_path(@bid.product), status: :unprocessable_entity }
         format.json { render json: @bid.errors, status: :unprocessable_entity }
       end
     end

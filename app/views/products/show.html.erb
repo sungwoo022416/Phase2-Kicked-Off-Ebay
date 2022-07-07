@@ -1,7 +1,20 @@
 <body class = "h-full bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
 
   <div class = "flex mx-auto">
-    
+    <header class = "bg-blue-400 font-bold p-2 col-start-7 col-span-6 mx-auto">
+      <% if logged_in? %>
+      hELLLO! <%=current_user.name %><br>
+        <a href="/home">  
+        <button>My profile</button></a>
+        <a href="/logout">  
+        <button>Logout</button></a> 
+      <% else %>
+        <a href="/login">  
+        <button>Login</button></a>
+        <a href="/users/new">  
+        <button>Sign Up</button></a> 
+      <% end %>
+    </header>
     <div class = "flex-none w-60">
       <div></div>
       <div class = "border-dashed border-8 border-green-600">
@@ -54,11 +67,11 @@
         <h1 class = "text-6xl">$<%=@product.max_bid_price%></h1>
         <h1 class = "text-6xl">By: <%= link_to @product.max_bidder_name, @product.max_bidder %></h1>
           <div>
-            <%=form_for @bid do |f|%>
+            <%=form_with model: @bid do |f|%>
             <label class = "text-4xl text-green-600" for="price">🤑PLACE BID HERE🤑</label><br><br>
             <label  class = "text-4xl text-green-600">$</label><%=f.number_field :price%><br><br>
-            <%=f.collection_select :user_id, User.all, :id, :name %><br><br>
-            <%=f.collection_select :product_id, Product.all, :id, :name %><br><br>
+            <label  class = "text-4xl text-green-600">bidder: </label><%= f.select :user_id, [["#{current_user.name}","#{@user.id}"]]%><br><br>
+            <label  class = "text-4xl text-green-600">product:</label><%= f.select :product_id, [["#{@product.name}","#{@product.id}"]]%><br><br>
             <input class = "bg-green-600 rounded-fill" type = "submit" value = "PLACE BID">
             <%end%>
         </div>
