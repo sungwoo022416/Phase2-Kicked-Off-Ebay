@@ -53,7 +53,8 @@ j = 0
 
     User.create({
       name: "#{Faker::Name.initials(number: 2)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}",
-      password_digest: "#{User.name}"
+      password: "1234".
+      password_confirmation: "1234"
     })
     j += 1
     Interest.create({

@@ -1,6 +1,7 @@
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
   <div class = "mx-auto">
+   <p style="color: green"><%= notice %></p>
     <% if logged_in? %>
         <h1 class = "text-6xl">👋, <%= current_user.name %></h1>
     <%end%>
@@ -13,6 +14,9 @@
     <button class = "text-4xl bg-green-400 rounded-full">Seller List</button></a><br><br>
     <a href="/bids">  
     <button class = "text-4xl  bg-green-400 rounded-full">Bids List</button></a><br><br>
+
+    <a href = "/users/<%=current_user.id%>">
+    <button class = "text-4xl bg-green-400 rounded-full ">Show Profile</button></a><br><br>
 
     <a href = "/users/<%=current_user.id%>/edit">
     <button class = "text-4xl bg-green-400 rounded-full ">Edit Profile</button></a><br><br>

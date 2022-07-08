@@ -6,17 +6,12 @@ class User < ApplicationRecord
     has_many :categories, through: :interests
 
 
-    # validates :name, length: { minimum: 6}
-    # validates :name, presence: true
-    # validates :name, uniqueness: true
+    validates :name, length: { minimum: 6}
+    validates :name, presence: true
+    validates :name, uniqueness: true
 
-    # validates :password_digest, presence: true
-    # validates :password_digest, length: {minimum: 6}
-
-    # validates :password, length: { minimum: 4}
-    # validates :password, presence: true
-
-    # validates :password_confirmation, presence: true
+    validates :password_digest, length: { minimum: 4}
+    validates :password_digest, presence: true
 
     def categories_attributes=(category_attributes)
         category_attributes.values.each do |category_attribute|
