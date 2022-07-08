@@ -26,9 +26,14 @@ class BidsController < ApplicationController
         format.html { redirect_to product_path(@bid.product), notice: "#{current_user.name} bidded #{@bid.price} for #{@bid.product.name}." }
         format.json { render :show, status: :created, location: @bid }
       else
-        format.html { redirect_to product_path(@bid.product), status: :unprocessable_entity }
-        format.json { render json: @bid.errors, status: :unprocessable_entity }
-      end
+        if logged_in?
+          format.html { redirect_to product_path(@bid.product), notice: "Please put the bid amount!" }
+          format.json { render json: @bid.errors, status: :unprocessable_entity }
+        else
+          format.html { redirect_to product_path(@bid.product), notice: "Please log in first!" }
+          format.json { render json: @bid.errors, status: :unprocessable_entity }
+        end
+        end
     end
   end
 
