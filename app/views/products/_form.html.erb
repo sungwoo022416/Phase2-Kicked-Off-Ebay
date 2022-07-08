@@ -23,9 +23,6 @@
 
   <div>
     <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    <%= form.fields_for :categories, product.categories.build do |categories_fields| %>
-      <%= categories_fields.text_field :name %>
-    <% end %>
   </div>
 
   <div>
