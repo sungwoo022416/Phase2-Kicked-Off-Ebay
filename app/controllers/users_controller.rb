@@ -23,14 +23,13 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
         format.html { redirect_to controller: 'products', action: 'index', notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :show, status: :created, location: @user, status: :unprocessable_entity }
       else
-        format.html { redirect_to controller: 'users', action: 'new' }
+        format.html { redirect_to controller: 'users', action: 'new', notice: "unsuccessful!"}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
