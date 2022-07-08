@@ -1,7 +1,7 @@
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
   <div class = "mx-auto">
-   <p style="color: green"><%= notice %></p>
+  <p class ="text-6xl text-green-600-"><%= notice %></p>
     <% if logged_in? %>
         <h1 class = "text-6xl">👋, <%= current_user.name %></h1>
     <%end%>
