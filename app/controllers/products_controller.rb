@@ -9,12 +9,14 @@ class ProductsController < ApplicationController
   def favorites
     array = []
     Product.all.each do |p|
-      if p.categories - @user.categories != []
-        array << p
-      end
+      p.categories.each do |b|
+        if @user.categories.include?(b)
+          array << p
+        end
+      end 
     end
 
-    @products = Product.all.filter { |p| array.include?(p) }
+    @products = array
 
     render 'products/index' 
   end

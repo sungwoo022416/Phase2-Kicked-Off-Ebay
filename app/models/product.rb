@@ -86,4 +86,8 @@ class Product < ApplicationRecord
             Product.all
         end
     end
+
+    def self.favorites
+        Product.where("category IN #{@user.categories.map {c.name}.join}")
+    end
 end
