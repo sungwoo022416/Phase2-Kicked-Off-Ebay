@@ -67,8 +67,8 @@
 
       <div class = "border-double border-orange-600 border-8 bg-orange-300">
         <h1 class = "text-6xl text-green-600">CURRENT BID</h1>
-        <h1 class = "text-6xl">$<%=@product.max_bid_price%></h1>
-        <h1 class = "text-6xl">By: <%= link_to @product.max_bidder_name, @product.max_bidder %></h1>
+        <h2 class = "text-6xl">$<%=@product.max_bid_price%></h1>
+        <h3 class = "text-6xl">By: <%= link_to @product.max_bidder_name, @product.max_bidder %></h1>
           <div>
 
             <%=form_with model: @bid do |f|%>
@@ -83,9 +83,9 @@
             <% end %>
             <label class = "text-4xl text-green-600" for="price">🤑PLACE BID HERE🤑</label><br><br>
             <label  class = "text-4xl text-green-600">$</label><%=f.number_field :price%><br><br>
-            <label  class = "text-4xl text-green-600">bidder: </label><%= f.select :user_id, [["#{current_user.name}","#{@user.id}"]]%><br><br>
-            <label  class = "text-4xl text-green-600">product:</label><%= f.select :product_id, [["#{@product.name}","#{@product.id}"]]%><br><br>
-            <input class = "bg-green-600 rounded-fill" type = "submit" value = "PLACE BID">
+            <label  class = "text-4xl text-green-600"></label></label><%= f.select :user_id, [["#{current_user.name}","#{@user.id}"]]%><br><br>
+            <label  class = "text-4xl text-green-600"></label><%= f.select :product_id, [["#{@product.name}","#{@product.id}"]]%><br><br>
+            <input class = "bg-green-600 rounded-full text-3xl" type = "submit" value = "PLACE BID">
             <%end%>
         </div>
       </div>
