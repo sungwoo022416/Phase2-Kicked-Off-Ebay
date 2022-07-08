@@ -1,9 +1,8 @@
-<h1>Editing user</h1>
-
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
-  <div>
-    <h1 class= "font-bold text-6xl text-center text-blue-400"> Editing Your Profile</h1>
+  <di class = "mx-auto text-center">
+    <h1 class= "font-bold text-6xl text-center text-blue-400">👋, <%=current_user.name%>!</h1>
+    <h2  class= "font-bold text-5xl text-center text-blue-400">Let's Edit Your Profile</h1>
 
     <div>
       <%= form_for @user do |f| %>
@@ -12,23 +11,31 @@
           <%= f.text_field :name %>
         </div>
 
-        <div>
-          <%#= f.label :interest_1, style: "display: block" %>
-          <%#= f.collection_select(:user, :category_id, Categories.all, :id, :name) %>
-        </div>
+      <h3> Please Select Your Interests </h3>
+      <div>
+        <%= f.label :interest, style: "display: block" %>
+        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
+      </div>
 
-        <div>
-          <%#= f.label :interest_2, style: "display: block" %>
-          <%#= f.text_field :interest_2 %>
-        </div>
+      <div>
+        <%= f.label :interest, style: "display: block" %>
+        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
+      </div>
 
-        <div class = "rounded-full bg-yellow-200">
-          <%= f.submit "Create User"%>
-        </div>
+      <div>
+        <%= f.label :interest, style: "display: block" %>
+        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
+      </div><br>
+
+       <a href="/"><button class = "text-4xl bg-green-400 rounded-full">Home Page</button></a><br><br>
+      <input class = "text-3xl rounded-full bg-rose-400 hover:bg-rose-800"type=submit value="Logout"><br><br>
+
+
+
+      <div>
+        <%= f.submit "Update Your Profile!"%>
+      </div>
       <%end%></p>
-    </div>
-    <div class = "rounded-full bg-rose-400">
-      <%= link_to "Back to users", users_path %>
     </div>
    </div>
 </body>
