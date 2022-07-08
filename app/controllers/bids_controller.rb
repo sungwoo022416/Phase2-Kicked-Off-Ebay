@@ -23,7 +23,7 @@ class BidsController < ApplicationController
 
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to product_path(@bid.product), notice: "Bid was successfully created." }
+        format.html { redirect_to product_path(@bid.product), notice: "#{current_user.name} bidded #{@bid.price} for #{@bid.product.name}." }
         format.json { render :show, status: :created, location: @bid }
       else
         format.html { redirect_to product_path(@bid.product), status: :unprocessable_entity }

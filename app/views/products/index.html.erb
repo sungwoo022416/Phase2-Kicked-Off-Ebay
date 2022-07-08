@@ -1,10 +1,10 @@
 <body class =  "h-full bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
 
   <div class = "grid grid-cols-6 gap-6 row-auto mx-auto text-center">
-
     <header class = "bg-blue-400 font-bold p-3 col-start-2 col-span-4 text-center">
       <div class= "p-2 text-center">
         <ul class = "list-none text-center mx-auto">
+          <p style="color: green"><%= notice %></p>
           <h1 class = "text-8xl text-green-500 text-center"><%=link_to "𝕂𝕚𝕔𝕜𝕖𝕕𝕆𝕗𝕗_𝔼𝕓𝕒𝕪", "/"%></h1>
 
           <h2 class = "text-5xl text-blue-600 mx-auto text-center">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
@@ -48,7 +48,6 @@
     </div>
 
      <div class = "col-start-6 text-center mx-auto">
-
       <h2 class = "text-right text-4xl text-blue-400 underline w-max">🚨TRENDING</h2>
       <ul class = "list-none text-center"> <%Bid.trending_products.each do |c|%>
         <br><li class = "text-3xl">🚀 <%=link_to c.product.name.titleize, c.product%></li>

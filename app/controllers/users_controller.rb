@@ -26,10 +26,12 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to controller: 'products', action: 'index', notice: "User was successfully created." }
+        format.html { redirect_to home_path, notice: "Account successfully created." }
         format.json { render :show, status: :created, location: @user, status: :unprocessable_entity }
       else
-        format.html { redirect_to controller: 'users', action: 'new', notice: "unsuccessful!"}
+        format.html { redirect_to new_user_path(@user), notice: "Something went wrong: 
+        Name should be at least 6 characters || 
+        Password should be at least 4 characters"}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+        format.html { redirect_to home_path, notice: "Information successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +55,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to products_path, notice: "Account successfully destroyed." }
       format.json { head :no_content }
     end
   end
