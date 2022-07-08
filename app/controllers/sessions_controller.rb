@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
         if !!@user && @user.authenticate(params[:password])
 
             session[:user_id] = @user.id
-            redirect_to home_path
+            creation = "Logged In Successfully!"
+            redirect_to home_path, notice: creation
         else
-            message = "Something went wrong! Please check your info again!"
+            message = "Please check your ID and Password again!"
             redirect_to login_path, notice: message
         end
     end
