@@ -6,16 +6,16 @@
     <%end%>
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <a href="/">  
-    <button class = "text-4xl rounded-full bg-green-400" >Home Page</button></a><br><br>
+    <button class = "text-4xl bg-green-400 rounded-full">Home Page</button></a><br><br>
     <a href = "/products/new">
-    <button class = "text-4xl rounded-full bg-green-400">Sell Your Stuff!</button></a><br<br>
+    <button class = "text-4xl  bg-green-400 rounded-full">Sell Your Stuff!</button></a><br<br>
     <a href="/users">  
-    <button class = "text-4xl rounded-full bg-green-400" >Seller List</button></a><br><br>
+    <button class = "text-4xl bg-green-400 rounded-full " >Seller List</button></a><br><br>
     <a href="/bids">  
-    <button class = "text-4xl rounded-full bg-green-400">Bids List</button></a><br><br>
+    <button class = "text-4xl  bg-green-400 rounded-full">Bids List</button></a><br><br>
 
     <a href = "/users/<%current_user.id%>/edit">
-    <button class = "text-4xl rounded-full bg-green-400">Edit Profile</button></a><br><br>
+    <button class = "text-4xl bg-green-400 rounded-full ">Edit Profile</button></a><br><br>
 
     <input class = "text-3xl rounded-full bg-rose-400"type=submit value="Logout"><br><br>
  
