@@ -70,7 +70,17 @@
         <h1 class = "text-6xl">$<%=@product.max_bid_price%></h1>
         <h1 class = "text-6xl">By: <%= link_to @product.max_bidder_name, @product.max_bidder %></h1>
           <div>
+
             <%=form_with model: @bid do |f|%>
+             <% if @bid.errors.any? %>
+          <div style="color: red">
+          <h2><%= pluralize(bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
+          <ul>
+            <% @bid.errors.each do |error| %>
+              <li><%= error.full_messages %></li>
+              <% end %>
+          </ul>
+            <% end %>
             <label class = "text-4xl text-green-600" for="price">🤑PLACE BID HERE🤑</label><br><br>
             <label  class = "text-4xl text-green-600">$</label><%=f.number_field :price%><br><br>
             <label  class = "text-4xl text-green-600">bidder: </label><%= f.select :user_id, [["#{current_user.name}","#{@user.id}"]]%><br><br>
