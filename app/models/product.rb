@@ -8,9 +8,21 @@ class Product < ApplicationRecord
     def categories_attributes=(category_attributes)
         category_attributes.values.each do |category_attribute|
             category = Category.find_or_create_by(category_attribute)
-            self.categories << category
+            self.categories << category 
         end
     end 
+
+    def self.favorites
+        array = []
+        Product.all.each do |p|
+            if p.categories - current_user.categories != []
+                array << p
+            end
+        end
+
+        Product.all.filter { |p| array.include?(p) }
+
+    end
 
     def has_bids? 
         if self.bids == []

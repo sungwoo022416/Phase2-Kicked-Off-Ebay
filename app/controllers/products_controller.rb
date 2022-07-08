@@ -6,6 +6,19 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search])
   end
 
+  def favorites
+    array = []
+    Product.all.each do |p|
+      if p.categories - @user.categories != []
+        array << p
+      end
+    end
+
+    @products = Product.all.filter { |p| array.include?(p) }
+
+    render 'products/index' 
+  end
+
   # GET /products/1 or /products/1.json
   def show
       @product = Product.find(params[:id])
@@ -67,6 +80,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :category, :price,:user_id, :search,category_ids:[], categories_attributes: [:name])
+      params.require(:product).permit(:name, :category, :price,:user_id, :search, category_ids:[], categories_attributes: [:name])
     end
 end
