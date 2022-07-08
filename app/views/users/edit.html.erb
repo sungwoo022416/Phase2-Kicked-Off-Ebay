@@ -13,18 +13,7 @@
 
       <h3> Please Select Your Interests </h3>
       <div>
-        <%= f.label :interest, style: "display: block" %>
-        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
-      </div>
-
-      <div>
-        <%= f.label :interest, style: "display: block" %>
-        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
-      </div>
-
-      <div>
-        <%= f.label :interest, style: "display: block" %>
-        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
       </div><br>
 
        <a href="/"><button class = "text-4xl bg-green-400 rounded-full">Home Page</button></a><br><br>
