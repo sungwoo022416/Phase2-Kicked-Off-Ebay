@@ -23,8 +23,25 @@ categories = [{
 },
 {
   name: "Electronics"
-}
-]
+},
+{
+  name: "Camera"
+},
+{
+  name: "Vehicle"
+},
+{
+  name: "K-Pop"
+},
+{
+  name: "Currency"
+},
+{
+  name: "Furniture"
+},
+{
+  name: "Beer"
+}]
 
 categories.each do |c|
   Category.create!(c)
@@ -32,7 +49,7 @@ end
 
 j = 0
 
-4.times do 
+100.times do 
 
     User.create({
       name: "#{Faker::Name.initials(number: 2)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}",
@@ -41,151 +58,249 @@ j = 0
     j += 1
     Interest.create({
       user_id: j,
-      category_id: rand(1..3)
+      category_id: rand(1..4)
     })
 
     Interest.create({
       user_id: j,
-      category_id: rand(4..6)
+      category_id: rand(5..8)
+    })
+
+    Interest.create({
+      user_id: j,
+      category_id: rand(9..12)
     })
 end
 
-
-
 i = 0
 
-5.times do 
+25.times do 
 
-    Product.create({
-      name: Faker::Book.title,
-      category: "Books",
+  Product.create({
+    name: Faker::Book.title,
+    category: "Books",
+    price: "#{rand(1..1000)}",
+    user_id: rand(1..100)
+  })
+
+  i += 1
+  ProductCategory.create({
+      product_id: i,
+      category_id: 1
+  })
+
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+
+  Product.create({
+    name: Faker::Game.title,
+    category: "Games",
+    price: "#{rand(1..100)}",
+    user_id: rand(1..100)
+  })
+
+  i += 1
+  ProductCategory.create({
+      product_id: i,
+      category_id: 2
+  })
+
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+
+  Product.create({
+      name: Faker::JapaneseMedia::OnePiece.character,
+      category: 'Figures',
+      price: "#{rand(1..1000000)}",
+      user_id: rand(1..100)
+  })
+
+  i += 1
+  ProductCategory.create({
+      product_id: i,
+      category_id: 3
+  })
+
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+
+  Product.create({
+      name: Faker::Movie.title,
+      category: 'Movies',
+      price: "#{rand(1..50)}",
+      user_id: rand(1..100)
+  })
+
+  i += 1
+  ProductCategory.create({
+      product_id: i,
+      category_id: 4
+  })
+
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+  
+  Product.create({
+      name: Faker::Coffee.blend_name,
+      category: 'Coffee',
       price: "#{rand(1..1000)}",
-      user_id: rand(1..4)
-    })
+      user_id: rand(1..100)
+  })
 
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 1
-    })
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
 
-    Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
+      category_id: 5
+  })
 
-    Product.create({
-      name: Faker::Game.title,
-      category: "Games",
-      price: "#{rand(1..100)}",
-      user_id: rand(1..4)
-    })
+  Product.create({
+      name: Faker::Drone.name,
+      category: 'Electronics',
+      price: "#{rand(300..10000000000000)}",
+      user_id: rand(1..100)
+  })
 
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 2
-    })
-
-    Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
+      category_id: 6
+  })
 
-    Product.create({
-        name: Faker::JapaneseMedia::OnePiece.character,
-        category: 'Figurines',
-        price: "#{rand(1..1000000)}",
-        user_id: rand(1..4)
-    })
-
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 3
-    })
-
-    Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+  
+  Product.create({
+      name: Faker::Camera.brand_with_model,
+      category: 'Camera',
+      price: "#{rand(1..100000)}",
+      user_id: rand(1..100)
+  })
+  
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
+      category_id: 7
+  })
 
-    Product.create({
-        name: Faker::Movie.title,
-        category: 'Movies',
-        price: "#{rand(1..50)}",
-        user_id: rand(1..4)
-    })
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
 
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 4
-    })
+  Product.create({
+    name: Faker::Vehicle.make_and_model,
+    category: 'Vehicle',
+    price: "#{rand(1..100000)}",
+    user_id: rand(1..100)
+})
 
-    Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
-    
-    Product.create({
-        name: Faker::Coffee.blend_name,
-        category: 'Coffee',
-        price: "#{rand(1..1000)}",
-        user_id: rand(1..4)
-    })
+      category_id: 8
+  })
 
-   Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+
+  Product.create({
+    name: Faker::Kpop.ii_groups,
+    category: 'K-Pop',
+    price: "#{rand(1..100000)}",
+    user_id: rand(1..100)
+})
+
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
+      category_id: 9
+  })
 
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 5
-    })
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
 
-    Product.create({
-        name: Faker::Drone.name,
-        category: 'Electronics',
-        price: "#{rand(300..10000000000000)}",
-        user_id: rand(1..4)
-    })
+  Product.create({
+    name: Faker::Currency.name,
+    category: 'Currency',
+    price: "#{rand(1..100000)}",
+    user_id: rand(1..100)
+})
 
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 6
-    })
-
-    Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
-    
-    Product.create({
-        name: Faker::Camera.brand_with_model,
-        category: 'Electronics',
-        price: "#{rand(1..100000)}",
-        user_id: rand(1..4)
-    })
-    
-    i += 1
-    ProductCategory.create({
-        product_id: i,
-        category_id: 6
-    })
+      category_id: 10
+  })
 
-    Bid.create({
-      price: "#{rand(1.0..999.9).round(2)}",
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+
+  Product.create({
+    name: Faker::House.furniture,
+    category: 'Furniture',
+    price: "#{rand(1..100000)}",
+    user_id: rand(1..100)
+})
+
+  i += 1
+  ProductCategory.create({
       product_id: i,
-      user_id: rand(1..4)
-    })
+      category_id: 11
+  })
+
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
+
+  Product.create({
+    name: Faker::Beer.name,
+    category: 'Beer',
+    price: "#{rand(1..100000)}",
+    user_id: rand(1..100)
+})
+
+  i += 1
+  ProductCategory.create({
+      product_id: i,
+      category_id: 12
+  })
+
+  Bid.create({
+    price: "#{rand(1.0..999.9).round(2)}",
+    product_id: i,
+    user_id: rand(1..100)
+  })
 end

@@ -1,6 +1,6 @@
 class BidsController < ApplicationController
   before_action :require_logged_in, :set_bid, only: %i[ show edit update destroy ]
-
+  
 
   # GET /bids or /bids.json
   def index
