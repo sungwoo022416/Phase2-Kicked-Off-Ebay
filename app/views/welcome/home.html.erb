@@ -8,9 +8,11 @@
     <input type=submit value='logout'>
     <a href="/">  
     <button>Home Page</button></a>
-    <%= button_to "Seller List", users_path,  method: :get%>
-    <%= button_to "Bids List", bids_path,  method: :get%>
-    <%= button_to "Category List", categories_path,  method: :get%>
+     <a href="/users">  
+    <button>Seller List</button></a>
+      <a href="/bids">  
+    <button>Bids List</button></a>
+ 
     <% end %>
     </div>
 </body>
