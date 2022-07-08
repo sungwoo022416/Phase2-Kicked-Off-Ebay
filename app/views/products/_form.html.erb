@@ -22,7 +22,7 @@
 
   <div>
     <%= form.label :category, style: "display: block" %>
-    <%= form.collection_select :category_ids, Category.all, :id, :name %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
   </div>
 
   <div>
