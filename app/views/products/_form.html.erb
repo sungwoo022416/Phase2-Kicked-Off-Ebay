@@ -1,7 +1,7 @@
   <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
   <div>
-    <h1 class= "font-bold text-6xl text-center text-blue-400"> Create New Product</h1>
+    <h1 class= "font-bold text-6xl text-center text-blue-400"> Sell Your Stuff!</h1>
 <%= form_for @product do |form| %>
   <% if product.errors.any? %>
     <div style="color: red">
@@ -33,8 +33,11 @@
   <div>
     <%= form.label :Seller, style: "display: block" %>
     <%= form.select :user_id, [["#{current_user.name}","#{@user.id}"]]%>
+  </div>
 
-    <div>
+  <br>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
