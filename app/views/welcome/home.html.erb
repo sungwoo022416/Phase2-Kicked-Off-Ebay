@@ -1,18 +1,19 @@
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
-  <div>
+  <div class = "mx-auto">
     <% if logged_in? %>
-        <h1>You are Logged In, <%= current_user.name %></h1>
+        <h1 class = "text-6xl">👋, <%= current_user.name %></h1>
     <%end%>
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-    <input type=submit value='logout'>
     <a href="/">  
-    <button>Home Page</button></a>
+    <button class = "text-4xl rounded-full bg-green-400" >Home Page</button></a><br><br>
      <a href="/users">  
-    <button>Seller List</button></a>
+    <button class = "text-4xl rounded-full bg-green-400" >Seller List</button></a><br><br>
       <a href="/bids">  
-    <button>Bids List</button></a>
+    <button class = "text-4xl rounded-full bg-green-400">Bids List</button></a><br><br>
+
+    <input class = "text-3xl rounded-full bg-rose-400"type=submit value="Logout"><br><br>
  
     <% end %>
-    </div>
+  </div>
 </body>
