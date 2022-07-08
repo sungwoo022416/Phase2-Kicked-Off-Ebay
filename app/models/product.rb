@@ -4,6 +4,14 @@ class Product < ApplicationRecord
     has_many :categories, through: :product_categories
     belongs_to :user
 
+    
+    def categories_attributes=(category_attributes)
+        category_attributes.values.each do |category_attribute|
+            category = Category.find_or_create_by(category_attribute)
+            self.categories << category
+        end
+    end 
+
     def has_bids? 
         if self.bids == []
             return false 

@@ -1,4 +1,4 @@
-  <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
+<body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-center"> 
 
   <div>
     <h1 class= "font-bold text-6xl text-center text-blue-400"> Sell Your Stuff!</h1>
@@ -20,9 +20,12 @@
     <%= form.text_field :name %>
   </div>
 
+
   <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.collection_select :category_id, Category.all, :id, :name %>
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <%= form.fields_for :categories, product.categories.build do |categories_fields| %>
+      <%= categories_fields.text_field :name %>
+    <% end %>
   </div>
 
   <div>
