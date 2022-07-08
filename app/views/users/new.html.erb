@@ -31,20 +31,10 @@
         <%= f.password_field :password_confirmaition %>
       </div><br>
       <h3> Please Select Your Interest </h3>
-      <div>
-        <%= f.label :interest, style: "display: block" %>
-        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
-      </div>
 
       <div>
-        <%= f.label :interest, style: "display: block" %>
-        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
       </div>
-
-      <div>
-        <%= f.label :interest, style: "display: block" %>
-        <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
-      </div><br>
 
       <div class = "text-3xl">
         <%= f.submit "Create User"%><br>

@@ -18,6 +18,13 @@ class User < ApplicationRecord
 
     # validates :password_confirmation, presence: true
 
+    def categories_attributes=(category_attributes)
+        category_attributes.values.each do |category_attribute|
+          category = Category.find_or_create_by(category_attribute)
+          self.categories << category
+        end
+      end
+
     def category_1
         if self.categories != []
             return "#{self.categories[0].name}"
