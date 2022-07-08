@@ -1,19 +1,20 @@
 <body class =  "h-full bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none">
 
   
-  <div class = "grid grid-cols-6 gap-6 row-auto mx-auto m-0">
+  <div class = "grid grid-cols-6 gap-6 row-auto mx-auto text-center">
 
-    <header class = "bg-blue-400 font-bold p-3 col-start-3 col-span-6 mx-auto">
-      <div class= "p-2">
+    <header class = "bg-blue-400 font-bold p-3 col-start-2 col-span-4 text-center">
+      <div class= "p-2 text-center">
         <ul class = "list-none text-center mx-auto">
-          <h1 class = "text-4xl no-underline text-green-400"><%= link_to "KɪᴄᴋᴇᴅOғғEʙᴀʏ🏠", '/'%></h1>
-          <h2 class = "mx-auto text-2xl">Because ➡️➡️➡️➡️ Everyone🫵 Deserves💪 a Second♻️ Chance😇</h2>
+          <h1 class = "text-8xl text-green-500 text-center"><%=link_to "𝕂𝕚𝕔𝕜𝕖𝕕𝕆𝕗𝕗_𝔼𝕓𝕒𝕪", "/"%></h1>
+
+          <h2 class = "text-5xl text-blue-600 mx-auto text-center">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
               <% if logged_in? %>
-          <h3 class = "text 2xl">Hello! <%=current_user.name %></h3><br>
+          <h3 class = "text 3xl">Hello! <%=current_user.name %></h3><br>
             <a href="/home">  
-            <button>My profile</button></a>
+            <button class = "text-2xl rounded-full">My profile</button></a>
             <a href="/logout">  
-            <button>Logout</button></a> 
+            <button  class = "text-2xl rounded-full">Logout</button></a> 
           <% else %>
             <a href="/login">  
             <button class= "text-2xl rounded-none hover:rounded-full">Login</button></a>
@@ -29,8 +30,6 @@
     </header>
 
     <div class = "col-start-1 text-center mx-auto">
-      <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br><br><br><br><br>
-
       <h2 class = "text-right text-4xl text-blue-400 underline w-max">CATEGORIES</h2>
       <ul class = "list-none"> <%Category.all.each do |c|%>
         <br><li class = "text-3xl">➡️ <%=link_to c.name.titleize, c%> ⬅️</li>
@@ -39,9 +38,7 @@
     </div>
 
     <div class = "col-start-2 col-span-4 text-center content-center">
-      <h1 class = "text-8xl text-green-500">𝕂𝕚𝕔𝕜𝕖𝕕𝕆𝕗𝕗_𝔼𝕓𝕒𝕪</h1>
-      <h1 class = "text-6xl text-blue-600 w-max text-left mx-auto">Everyone🫵 Deserves💪 a Second♻️ Chance😇</h1>
-      <h2 class = "text-4xl text-blue-400 underline">PRODUCTS</h2>
+    <h2 class = "text-4xl text-blue-400 underline">PRODUCTS</h2>
       <ul class = "list-none text-center"><%@products.each do |p|%>
         <li class = "text-2xl col-start-3 col-span-1">🔥 <%=link_to p.name, p%> | <%=p.under_value%></li>
         <%end%>
@@ -50,7 +47,6 @@
     </div>
 
      <div class = "col-start-6 text-center mx-auto">
-      <br><br><br><br<br><br><br><br><br<br><br><br><br><br><br<br><br><br><br><br><br><br>
 
       <h2 class = "text-right text-4xl text-blue-400 underline w-max">🚨TRENDING</h2>
       <ul class = "list-none text-center"> <%Bid.trending_products.each do |c|%>

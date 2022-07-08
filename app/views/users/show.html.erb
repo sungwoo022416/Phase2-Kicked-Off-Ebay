@@ -42,15 +42,15 @@
     
 
     <div>
-      <h2 class = "text-3xl text-blue-500 underline">Products for $ale</h2>
-      <ul class = "list-none text-2xl"><%Product.all.filter { |p| p.user_id == @user.id }.each do |prod| %> <%#User.products not working %> 
+      <h2 class = "text-4xl text-blue-500 underline">Products for $ale</h2>
+      <ul class = "list-none text-3xl"><%Product.all.filter { |p| p.user_id == @user.id }.each do |prod| %> <%#User.products not working %> 
         <li>🤑 <%=link_to prod.name, prod%></li>
         <%end%>
       </ul>
     </div>
 
-    <div class = "text-xl">
-      <%= link_to "Back to users", users_path %>
+    <div class = "text-2xl">
+      <%= link_to "See All Users", users_path %>
       <% if @user.id == current_user.id%>
         | <%= link_to "Edit this user", edit_user_path(@user) %> | 
         <%= link_to "Sell Your Stuff!", '/products/new'%>
