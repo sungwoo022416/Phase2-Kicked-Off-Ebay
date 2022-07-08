@@ -6,6 +6,19 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search])
   end
 
+  def favorites
+    array = []
+    Product.all.each do |p|
+      if p.categories - @user.categories != []
+        array << p
+      end
+    end
+
+    @products = Product.all.filter { |p| array.include?(p) }
+
+    render 'products/index' 
+  end
+
   # GET /products/1 or /products/1.json
   def show
       @product = Product.find(params[:id])

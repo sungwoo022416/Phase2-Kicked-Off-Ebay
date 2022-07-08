@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/products/favorites' => 'products#favorites'
+
   resources :categories
   resources :product_categories
   resources :interests
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   get '/home' => 'welcome#home'
   # Defines the root path route ("/")
   root "products#index"
+
 end
