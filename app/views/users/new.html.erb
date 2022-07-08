@@ -48,10 +48,13 @@
         <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
       </div><br>
 
-      <div>
+      <div class = "text-3xl">
         <%= f.submit "Create User"%><br>
         <%end%>
-        <%= link_to "Back to users", users_path %>
+      </div>
+
+      <div class = "text-2xl">
+        <br><%= link_to "Back to users", users_path %>
       </div>
   </div>
 </body>
