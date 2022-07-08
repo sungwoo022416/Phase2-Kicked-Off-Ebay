@@ -61,6 +61,7 @@
       </div>
       </header>
       <div>
+         <p style="color: green">><%= notice %></p>
         <h1 class = "text-6xl"><%=@product.name%></h1>
         <h2 class = "text-6xl text-green-600">Seller: <%= link_to @product.user.name, user_path(@product.user)%></h2>
       </div> 
