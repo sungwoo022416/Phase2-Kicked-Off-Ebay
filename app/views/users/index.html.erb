@@ -1,5 +1,5 @@
 <body class="h-screen bg-gradient-to-b from-yellow-100 to-blue-400 overscroll-none text-left">
-  <div>
+  <div class = "mx-auto">
     <header class = "bg-blue-400 font-bold p-3 mx-auto w-full">
       <div class= "p-2">
         <ul class = "list-none text-center mx-auto">
@@ -24,23 +24,18 @@
         </ul>
       </div>
     </header>
-    <div>
-      <p style="color: green"><%= notice %></p>
+      <div>
+        <p style="color: green"><%= notice %></p>
+      </div>
+      
+    <div class = "text-center">
+      <div>
+        <h1 class = "text-5xl text-blue-400 underline">Users</h1>
+        <ul class = "list-none text-3xl"><% @users.each do |user| %>
+          <li>🔥 <%= link_to "#{user.name} ➡️ #{Product.all.filter { |p| p.user_id == user.id }.count} items for sale", user %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
-
-    <div class = "font-bold text-clip text-5xl text-blue-400 underline">
-      <h1 >Users</h1>
-    </div>
-
-
-
-  <div class = "text-3xl ">
-    <ul class = "list-none"><% @users.each do |user| %>
-      <li>🔥 <%= link_to "#{user.name} ➡️ #{Product.all.filter { |p| p.user_id == user.id }.count} items for sale", user %></li>
-    <% end %>
-    </ul>
-  </div>
-
-  <%= link_to "New user", new_user_path %>
   </div>
 </body>
